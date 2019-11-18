@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  toker-homebridge:
+    image: toker-homebridge
+    build: .
+    container_name: toker-homebridge
+    restart: always
+    network_mode: host
+    ports:
+      - 7070:7070
+      - 51826:51826
+    volumes:
+      - /toker/homebridge:/homebridge

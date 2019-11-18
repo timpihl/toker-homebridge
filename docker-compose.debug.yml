@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  toker-homebridge:
+    image: toker-homebridge
+    build: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 7070:7070
+      - 51826:51826
+      - 9229:9229
+    ## set your startup file here
+    command: node --inspect=0.0.0.0:9229 index.js
